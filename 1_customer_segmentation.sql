@@ -17,7 +17,7 @@ FROM customer_ltv
 		c.*,
 		CASE 
 			WHEN c.total_ltv < cs.ltv_25th_percentile THEN '1 - Low-Value'
-			WHEN c.total_ltv <= cs.ltv_75th_percentile THEN '1 - Mid-Value'
+			WHEN c.total_ltv <= cs.ltv_75th_percentile THEN '2 - Mid-Value'
 			ELSE '3 - High-Value'
 		END AS customer_segment
 	FROM customer_ltv c,
